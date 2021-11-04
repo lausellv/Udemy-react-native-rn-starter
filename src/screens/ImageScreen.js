@@ -1,13 +1,25 @@
-import React from "react";
-import { view, Text, StyleSheet, View } from "react-native";
-import ImageDetail from "../components/ImageDetail";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import ImageDetail from '../components/ImageDetail';
+
 const ImageScreen = () => {
   return (
     <View>
-      <ImageDetail score={5} title="Ocean" imgSource={require("../../assets/beach.jpg")}/>
-      <ImageDetail score={4} title="Prairie" imgSource={require("../../assets/prairie.jpg")}/>
-      <ImageDetail score={6} title="Mountain" imgSource={require("../../assets/mountain.jpg")}/>
-      <ImageDetail score={9} title="Forest" imgSource={require("../../assets/forest.jpg")}/>
+      <ImageDetail
+        title="Forest"
+        imageSource={require('../../assets/forest.jpg')}
+        score={9}
+      />
+      <ImageDetail
+        title="Beach"
+        imageSource={require('../../assets/beach.jpg')}
+        score={7}
+      />
+      <ImageDetail
+        title="Mountain"
+        imageSource={require('../../assets/mountain.jpg')}
+        score={10}
+      />
     </View>
   );
 };
