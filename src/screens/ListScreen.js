@@ -18,10 +18,11 @@ const ListScreen = () => {
     <FlatList
       keyExtractor={friend => friend.name}
       data={friends}
-      renderItem={({ item }) => {
+      renderItem={(element) => {
+        console.log(element)
         return (
           <Text style={styles.textStyle}>
-            {item.name} - Age {item.age}
+            {element.item.name} - Age {element.item.age}
           </Text>
         );
       }}
