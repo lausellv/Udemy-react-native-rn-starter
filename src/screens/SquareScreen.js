@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 
 const COLOR_INCREMENT = 15;
@@ -14,7 +14,7 @@ const SquareScreen = () => {
     // change === +COLOR_INCREMENT, -COLOR_INCREMENT
     switch (color) {
       case "red":
-        red + change < 255 || red + change > 0 ? setRed(red + change) : null;
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);  // one cannot return directly from a ternary statement
         // if (red + change > 255 || red + change < 0) {
         //   return;
         // } else {
@@ -22,13 +22,13 @@ const SquareScreen = () => {
         // }
         return;
       case "green":
-        green + change < 255 || green + change > 0 ? setGreen(green + change) : null;
+        green + change > 255 || green + change < 0 ? null : setGreen(green + change);
         return;
       case "blue":
-        blue + change < 255 || blue + change > 0 ? setBlue(blue + change) : null;
+        blue + change > 255 || blue + change < 0 ? null : setBlue(blue + change);
         return;
-        default:
-          return;
+      default:
+        return;
     }
   };
 
@@ -53,10 +53,11 @@ const SquareScreen = () => {
         onDecrease={() => setColor("blue", -1 * COLOR_INCREMENT)}
         color="Blue"
       />
-      <View style={{justifyContent: "center", alignItems: "center"}}>
-      <View
-        style={{  height: 500, width: 500, backgroundColor: `rgb(${red}, ${green}, ${blue})` }}
-      /></View>
+      <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <View
+          style={{ height: 500, width: 500, backgroundColor: `rgb(${red}, ${green}, ${blue})` }}
+        />
+      </View>
     </View>
   );
 };
