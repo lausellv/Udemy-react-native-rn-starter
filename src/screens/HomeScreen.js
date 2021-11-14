@@ -11,6 +11,8 @@ const HomeScreen = ({ navigation }) => {
 
       <Button title="Go to Counter Demo" onPress={() => navigation.navigate("Counter")} />
       <Button title="Go to Counter 2 Demo" onPress={() => navigation.navigate("Counter2")}></Button>
+      <Button title="Go to Counter 3 (Redux) Demo" onPress={() => navigation.navigate("Counter3")}></Button>
+      
       <Button title="Go to Color Demo" onPress={() => navigation.navigate("Color")} />
       <Button title="Go to Color Screen 2" onPress={()=>navigation.navigate("Color2")}/>
       <Button title="Go to Color Square Demo" onPress={()=>navigation.navigate("Square")}/>
