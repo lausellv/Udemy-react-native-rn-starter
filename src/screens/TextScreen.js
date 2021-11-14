@@ -5,6 +5,7 @@ const TextScreen = () => {
   const [name, setName] = useState("");
   return (
     <View>
+      <Text>Enter Name: </Text>
       <TextInput 
       autoCapitalize="none"
        autoCorrect={false} 
